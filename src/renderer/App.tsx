@@ -63,6 +63,33 @@ function App() {
     return () => { supabase.removeChannel(channel); };
   }, []);
 
+
+  // --- RESTORED HOTKEYS ---
+  useEffect(() => {
+    const handleHotkeys = (e: KeyboardEvent) => {
+      if (isLocked) return; // Don't allow hotkeys if screen is locked
+
+      // Alt + I -> New Income
+      if (e.altKey && (e.key === 'i' || e.key === 'I')) {
+        e.preventDefault();
+        // Reset form and open Income
+        setDescInput(""); setAmountInput(""); setCategoryInput("Uncategorized"); setOwnerInput("Both"); setEditingId(null);
+        setActiveModal('income');
+      }
+
+      // Alt + E -> New Expense
+      if (e.altKey && (e.key === 'e' || e.key === 'E')) {
+        e.preventDefault();
+        // Reset form and open Expense
+        setDescInput(""); setAmountInput(""); setCategoryInput("Uncategorized"); setOwnerInput("Both"); setEditingId(null);
+        setActiveModal('expense');
+      }
+    };
+
+    window.addEventListener('keydown', handleHotkeys);
+    return () => window.removeEventListener('keydown', handleHotkeys);
+  }, [isLocked]);
+
   const filteredTransactions = useMemo(() => {
     return transactions.filter(t => {
       const matchesSearch = t.description.toLowerCase().includes(searchQuery.toLowerCase()) || t.category.toLowerCase().includes(searchQuery.toLowerCase());
