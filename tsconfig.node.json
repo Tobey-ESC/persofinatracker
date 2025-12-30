@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "composite": false,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "outDir": "dist-electron",
+    "rootDir": "src/main",
+    "lib": ["ESNext"],
+    "strict": true,
+    "sourceMap": false,
+    "skipLibCheck": true
+  },
+  "include": ["src/main/**/*"]
+}
