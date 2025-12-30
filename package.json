@@ -9,7 +9,8 @@
     "dev": "concurrently \"npm run dev:react\" \"npm run dev:electron\"",
     "dev:react": "vite",
     "dev:electron": "wait-on tcp:5173 && tsc -p tsconfig.node.json && cross-env NODE_ENV=development electron .",
-    "build": "tsc -p tsconfig.node.json && vite build && electron-builder"
+    "build": "tsc -p tsconfig.node.json && vite build && electron-builder",
+    "build:web": "vite build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
