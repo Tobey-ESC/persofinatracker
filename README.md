@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# FinanceOS 📈
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**FinanceOS** is a robust, cross-platform personal finance operating system designed to track net worth, manage debts, and analyze spending habits in real-time.
 
-Currently, two official plugins are available:
+Built with a "Desktop-First, Mobile-Companion" philosophy, it offers a powerful keyboard-driven experience on Windows and a responsive, touch-friendly interface on mobile devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![FinanceOS Dashboard](https://via.placeholder.com/1200x600?text=Dashboard+Screenshot+Here)
+## 🚀 Features
 
-## React Compiler
+### 📊 Comprehensive Dashboard
+* **Net Worth Tracker:** Real-time calculation of total assets vs. liabilities.
+* **Financial Runway:** Calculates how long you can survive on current savings based on monthly burn rate.
+* **Savings Rate:** Visualizes the percentage of income saved vs. spent.
+* **Income Stability Score:** Analyzes income consistency to generate a stability rating (0-100).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 💸 Transaction Management
+* **Unified Feed:** Track Income and Expenses with categorization.
+* **Multi-User Support:** Tag transactions by owner (e.g., John, Hannah, or Both).
+* **Smart Filtering:** Filter view by person or search by keyword/category.
 
-## Expanding the ESLint configuration
+### 🏦 Loan & Debt Tracker
+* **Payoff Progress:** Visual progress bars for every active loan.
+* **Smart Dates:** Tracks both *Next Payment Date* (operational) and *Target Payoff Date* (strategic).
+* **Total Debt Overview:** Aggregated view of all outstanding liabilities.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🔐 Security & Privacy
+* **PIN Protection:** System locks automatically after 5 minutes of inactivity.
+* **Intruder Lockout:** Locks the system for 5 minutes after 3 incorrect PIN attempts.
+* **Default PIN:** `1022` (Changeable in code).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📱 Cross-Platform
+* **Windows (.exe):** Full desktop application with hotkeys.
+* **Mobile (Web):** Responsive web build with Floating Action Buttons (FAB) for quick entry on the go.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠 Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+* **Core:** [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/)
+* **Desktop Engine:** [Electron](https://www.electronjs.org/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Database & Realtime:** [Supabase](https://supabase.com/)
+* **Charts:** [Recharts](https://recharts.org/)
+* **Icons:** [Lucide React](https://lucide.dev/)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ⚡ Getting Started
+
+### Prerequisites
+* Node.js (v18 or higher)
+* A Supabase account
+
+### 1. Clone & Install
+```bash
+git clone [https://github.com/Tobey-ESC/persofinatracker.git](https://github.com/Tobey-ESC/persofinatracker.git)
+cd finance-tracker
+npm install
